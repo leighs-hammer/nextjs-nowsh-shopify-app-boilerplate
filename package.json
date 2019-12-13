@@ -1,0 +1,29 @@
+{
+  "name": "silent-tools",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "ngrok": "ngrok http 3000",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@now/node": "^1.2.0",
+    "@shopify/polaris": "^4.9.1",
+    "axios": "^0.19.0",
+    "dotenv": "^8.2.0",
+    "next": "9.1.4",
+    "nonce": "^1.0.4",
+    "query-string": "^6.9.0",
+    "react": "16.12.0",
+    "react-dom": "16.12.0",
+    "shopify-hmac-validation": "^0.1.6"
+  },
+  "devDependencies": {
+    "@types/node": "^12.12.14",
+    "@types/react": "^16.9.15",
+    "ngrok": "^3.2.7",
+    "typescript": "^3.7.3"
+  }
+}
