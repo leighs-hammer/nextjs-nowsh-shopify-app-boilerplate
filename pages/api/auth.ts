@@ -5,12 +5,20 @@ import checkHmacValidity from 'shopify-hmac-validation'
 
 export default async (req: NowRequest, res: NowResponse) => {
 
+  if(!req.body.query.shop || !req.body.state) {
+    return res.json({
+      status: 429,
+      message: 'Unauthorized: Required Query or Shop missing.'
+    })
+  }
+  
   const shopifyValidity = checkHmacValidity(process.env.SHOPIFY_APP_SECRET, req.body.query)
+
 
   if(!shopifyValidity) {
     return res.json({
       status: 429,
-      message: 'Invalid entrance detected'
+      message: 'Unauthorized: Invalid entrance detected'
     })
   }
 
